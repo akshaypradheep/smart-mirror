@@ -84,7 +84,18 @@ class hiText(Frame):
         self.text = "HI AKSHAY...."
         self.textLbl = Label(self, text=self.text, font=('Helvetica', medium_text_size), fg="white", bg="black")
         self.textLbl.pack(side=TOP, anchor=N)
-
+#-----------------------------------DEFINE FUCTION TEST -------------------------------------------------
+class test(Frame):
+    def __init__(self, parent, text_name="test"):
+        Frame.__init__(self, parent, bg='black')
+        self.test()
+        
+        self.textLbl.pack(side=TOP, anchor=N)
+    def test(self):
+    	a= "test def"
+    	self.text = a
+        self.textLbl = Label(self, text=self.text, font=('Helvetica', medium_text_size), fg="white", bg="black")
+    	pass
 #------------------------------------Full Screen---------------------------------------------------------
 
 class FullscreenWindow:
@@ -105,7 +116,9 @@ class FullscreenWindow:
         #hiText
         self.hiText = hiText(self.topFrame)
         self.hiText.pack(side = RIGHT, anchor=S, padx=100, pady=60)
-  
+        #testDefFunction
+        self.test = test(self.bottomFrame)
+        self.test.pack(side =RIGHT, anchor=S, padx=100, pady=60)
 
 
     def toggle_fullscreen(self, event=None):
