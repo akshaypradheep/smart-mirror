@@ -97,55 +97,6 @@ class test(Frame):
     	self.text = a
         self.textLbl = Label(self, text=self.text, font=('Helvetica', medium_text_size), fg="white", bg="black")
     	pass
-#---------------------------------------NEWS-------------------------------------------------------------
-#class News(Frame):
-#    def __init__(self, parent, *args, **kwargs):
-#        Frame.__init__(self, parent, *args, **kwargs)
-#        self.config(bg='black')
-#        self.title = 'News' # 'News' is more internationally generic
-#        self.newsLbl = Label(self, text=self.title, font=('Helvetica', medium_text_size), fg="white", bg="black")
-#        self.newsLbl.pack(side=TOP, anchor=W)
-#        self.headlinesContainer = Frame(self, bg="black")
-#        self.headlinesContainer.pack(side=TOP)
-#        self.get_headlines()
-#
-#    def get_headlines(self):
-#        try:
-#            # remove all children
-#            for widget in self.headlinesContainer.winfo_children():
-#                widget.destroy()
-#            if news_country_code == None:
-#                headlines_url = "https://news.google.com/news?ned=us&output=rss"
-#            else:
-#                headlines_url = "https://news.google.com/news?ned=%s&output=rss" % news_country_code
-#
-#            feed = feedparser.parse(headlines_url)
-#
-#            for post in feed.entries[0:5]:
-#                headline = NewsHeadline(self.headlinesContainer, post.title)
-#                headline.pack(side=TOP, anchor=W)
-#        except Exception as e:
-#            traceback.print_exc()
-#            print "Error: %s. Cannot get news." % e
-#
-#        self.after(600000, self.get_headlines)
-#-----------------------------------NEWS HEADLINES-------------------------------------------------------
-#class NewsHeadline(Frame):
-#    def __init__(self, parent, event_name=""):
-#        Frame.__init__(self, parent, bg='black')
-#
-#        image = Image.open("assets/Newspaper.png")
-#        image = image.resize((25, 25), Image.ANTIALIAS)
-#        image = image.convert('RGB')
-#        photo = ImageTk.PhotoImage(image)
-#
-#        self.iconLbl = Label(self, bg='black', image=photo)
-#        self.iconLbl.image = photo
-#        self.iconLbl.pack(side=LEFT, anchor=N)
-#
-#        self.eventName = event_name
-#        self.eventNameLbl = Label(self, text=self.eventName, font=('Helvetica', small_text_size), fg="white", bg="black")
-#        self.eventNameLbl.pack(side=LEFT, anchor=N)
 #------------------------------------Full Screen---------------------------------------------------------
 
 class FullscreenWindow:
@@ -160,9 +111,6 @@ class FullscreenWindow:
         self.state = False
         self.tk.bind("<Return>", self.toggle_fullscreen)
         self.tk.bind("<Escape>", self.end_fullscreen)
-        #news
-        #self.news = News(self.bottomFrame)
-        #self.news.pack(side=LEFT, anchor=S, padx=100, pady=60)
         # clock
         self.clock = Clock(self.topFrame)
         self.clock.pack(side=RIGHT, anchor=N, padx=100, pady=60)
